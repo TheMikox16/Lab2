@@ -16,7 +16,7 @@ public class MixedFigure extends Figure implements AbstractComp {
 
     private String name;
     private Figure figure;
-    private ArrayList<AbstractComp> absList;
+    private ArrayList<AbstractComp> absList ;
     private Indentation inden;
 
     public MixedFigure() {

@@ -9,7 +9,7 @@ package exercise2;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public class Circle extends Figure{
+public class Circle extends Figure {
     
     private int radius;
 
