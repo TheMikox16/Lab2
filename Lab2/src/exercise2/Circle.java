@@ -13,6 +13,9 @@ public class Circle extends Figure{
     
     private int radius;
 
+    public Circle() {
+    }
+    
     public Circle(int radius, int coordenates) {
         super(coordenates);
         this.radius = radius;
@@ -29,6 +32,11 @@ public class Circle extends Figure{
     @Override
     public String toString() {
         return "Circulo:\n" + super.toString() + ", Radio: " + radius;
+    }
+
+    @Override
+    public String ls() {
+        return toString();
     }
 
 }

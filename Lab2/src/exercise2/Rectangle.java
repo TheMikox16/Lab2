@@ -14,6 +14,9 @@ public class Rectangle extends Figure{
     private int high;
     private int width;
 
+    public Rectangle() {
+    }
+    
     public Rectangle(int high, int weigth, int coordenates) {
         super(coordenates);
         this.high = high;
@@ -40,6 +43,11 @@ public class Rectangle extends Figure{
     public String toString() {
         return "Rectangulo:\n" + super.toString() + ", Alto: " + high 
                 + ", Ancho: " + width;
+    }
+
+    @Override
+    public String ls() {
+        return toString();
     }
     
     

@@ -5,6 +5,8 @@
  */
 package exercise2;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Miguel Angel Egoavil Mathison
@@ -12,11 +14,20 @@ package exercise2;
 public class FigureBuilder implements AbstractBuilder{
 
     protected Figure figure;
-
-    public FigureBuilder(Figure figure) {
-        this.figure = figure;
-    }    
     
+    @Override
+    public void buildFigure(int n){
+        switch(n){
+            case 0:
+                this.figure = new Circle();
+                break;
+            case 1:
+                this.figure = new Rectangle();
+                break;
+            case 2:
+                this.figure = new MixedFigure();
+        }
+    }
     
     @Override
     public void buildCoordenates(int n) {
@@ -41,6 +52,15 @@ public class FigureBuilder implements AbstractBuilder{
         if(n > 0){
             if(this.figure instanceof Rectangle){
                 ((Rectangle) this.figure).setWidth(n);
+            }
+        }
+    }
+    
+    @Override
+    public void buildMixed(Figure... figures) {
+        for(int i = 0; i < figures.length; i++){
+            if(figures[i] != null){
+                ((MixedFigure) this.figure).addAbs(figures[i]);
             }
         }
     }
@@ -70,6 +90,22 @@ public class FigureBuilder implements AbstractBuilder{
                 throw new PersonalizedException("");
             }
         }
+        if(this.figure instanceof MixedFigure){
+            int counter = 0;
+            Iterator iterator = ((MixedFigure) this.figure).getAbsList().iterator();
+            while(iterator.hasNext()){
+                if(iterator.next() != null){
+                    counter++;
+                }
+            }
+            if(counter < 2){
+                throw new PersonalizedException("Una figura mixta debe tener 2 figuras basicas");
+            }
+        }
+        
+        return this.figure;
     }
+
+    
     
 }

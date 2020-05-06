@@ -9,7 +9,7 @@ package exercise2;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public abstract class Figure {
+public abstract class Figure implements AbstractComp{
     
     private int coordenates;
 
@@ -33,6 +33,6 @@ public abstract class Figure {
         return "Coordenadas: " + coordenates;
     }
     
-    
+    public abstract String ls();
     
 }

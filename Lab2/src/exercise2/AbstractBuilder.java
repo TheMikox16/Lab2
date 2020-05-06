@@ -11,11 +11,15 @@ package exercise2;
  */
 public interface AbstractBuilder {
     
+    public abstract void buildFigure(int n);
+    
     public abstract void buildCoordenates(int n);
     
     public abstract void buildSide(int n);
     
     public abstract void buildSide2(int n);
+    
+    public abstract void buildMixed(Figure... figures);
     
     public abstract Figure getFigure() throws PersonalizedException;
     

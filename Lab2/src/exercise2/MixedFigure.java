@@ -12,19 +12,20 @@ import java.util.Iterator;
  *
  * @author Sean
  */
-public class MixedFigure implements AbstractComp {
+public class MixedFigure extends Figure implements AbstractComp {
 
     private String name;
     private Figure figure;
-    private ArrayList<Figure> figureList;
     private ArrayList<AbstractComp> absList;
     private Indentation inden;
 
+    public MixedFigure() {
+    }
+    
     public MixedFigure(String name, Figure figure, Indentation inden) {
         this.name = name;
         this.figure = figure;
         this.inden = inden;
-        figureList = new ArrayList<>();
         absList = new ArrayList<>();
     }
 
@@ -60,14 +61,6 @@ public class MixedFigure implements AbstractComp {
         this.inden = inden;
     }
     
-    public void addFigure(Figure object){
-        figureList.add(object);
-    }
-    
-    public void deleteFigure(Figure object){
-        figureList.remove(object);
-    }
-    
     public void addAbs(AbstractComp abs){
         if(!absList.contains(abs)){
             absList.add(abs);
@@ -96,7 +89,7 @@ public class MixedFigure implements AbstractComp {
     
     public String print(){
         String txt = "";
-        Iterator itList = figureList.iterator();
+        Iterator itList = absList.iterator();
         while(itList.hasNext()){
             Figure temp = (Figure) itList.next();
             txt += temp.ls();

@@ -12,14 +12,20 @@ package exercise2;
 public class FigureFactory implements FactoryInterface{
 
     @Override
-    public Figure createFigure(int... specs) {
+    public Figure createFigure(int... specs) throws PersonalizedException{
+        Scheduler schedule = new Scheduler();
         if(specs.length == 2){
-            //return new Cicle();
+            return schedule.createFigure(0, specs);
         }else if(specs.length == 3){
-            //return new Rectangle();
-        }else{
-            //return new Abstract();
+            return schedule.createFigure(1, specs);
         }
+        return null;
+    }
+        
+    @Override
+    public Figure createFigure(Figure... figures) throws PersonalizedException{
+        Scheduler schedule = new Scheduler();
+        return schedule.createFigure(figures);
     }
     
 }

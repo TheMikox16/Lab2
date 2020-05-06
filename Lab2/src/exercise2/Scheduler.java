@@ -11,6 +11,27 @@ package exercise2;
  */
 public class Scheduler {
     
-    public Figure createFigure
+    public Figure createFigure(int n, int... specs) throws PersonalizedException{
+        FigureBuilder builder = new FigureBuilder();
+        builder.buildFigure(n);
+        if(specs.length == 2){
+            builder.buildCoordenates(specs[0]);
+            builder.buildSide(specs[1]);
+            return builder.getFigure();
+        }else if(specs.length == 3){
+            builder.buildCoordenates(specs[0]);
+            builder.buildSide(specs[1]);
+            builder.buildSide2(specs[2]);
+            return builder.getFigure();
+        }
+        return null;
+    }
+    
+    public Figure createFigure(Figure... figures) throws PersonalizedException{
+        FigureBuilder builder = new FigureBuilder();
+        builder.buildFigure(2);
+        builder.buildMixed(figures);
+        return builder.getFigure();
+    }
     
 }

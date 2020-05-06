@@ -10,6 +10,7 @@ package exercise2;
  * @author Sean
  */
 public interface AbstractComp {
+    
     public abstract String ls();
     
 }

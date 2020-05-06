@@ -11,6 +11,8 @@ package exercise2;
  */
 public interface FactoryInterface {
     
-    public abstract Figure createFigure(int... specs);
+    public abstract Figure createFigure(int... specs) throws PersonalizedException;
+    
+    public abstract Figure createFigure(Figure... figures) throws PersonalizedException;
     
 }
