@@ -151,7 +151,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         Iterator iterator = observers.iterator();
         while(iterator.hasNext()){
             PurchaseObserver observer = (PurchaseObserver) iterator.next();
-            observer.update(this.status, null);
+            observer.update(this.status, this);
         }
     }
     

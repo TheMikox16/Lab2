@@ -7,6 +7,7 @@ package excercise1.patterns;
 
 import excercise1.purchaseapp.Purchase;
 import excercise1.purchaseapp.Status;
+import excercise1.purchaseapp.StatusEnum;
 import java.util.Iterator;
 import java.util.TreeMap;
 
@@ -23,7 +24,11 @@ public class WarehouseStaff implements PurchaseObserver{
         Iterator iterator = list.values().iterator();
         while(iterator.hasNext()){
             Purchase temp = (Purchase) iterator.next();
-            if(temp == purchase){
+            if(temp != null && temp.getStatus().getDescription() == StatusEnum.DELIVERED
+                    && this.list != null){
+                this.list.remove(purchase.getConsecutive());
+                return;
+            }else if(temp == purchase){
                 temp.setStatus(status);
                 return;
             }
@@ -37,7 +42,8 @@ public class WarehouseStaff implements PurchaseObserver{
         Iterator keys = this.list.keySet().iterator();
         Iterator values = this.list.values().iterator();
         while(keys.hasNext() & values.hasNext()){
-            s += keys.next() + " - " + values.next().toString() + "\n";
+            Purchase temp = (Purchase) values.next();
+            s += keys.next() + " - " + temp.getStatus().getDescription() + "\n";
         }
         System.out.println("Lista de Bodega:\n" + s);
     }
