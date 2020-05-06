@@ -27,6 +27,9 @@ public class Main {
         p1.addProduct(new Product("213", 1, 5.7));
         p1.addProduct(new Product("111", 5, 0.7));
         
+        p1.setShipping(new ShipmentByBoat());
+       // System.out.println(p1.
+        
         p1.removeProduct("111");
                 
         Purchase p2 = new Purchase();
@@ -80,13 +83,13 @@ public class Main {
         Thread.sleep(100);
         processing.updateStatus(4);
         Thread.sleep(100);
-        
+        /*
         System.out.println("Lista por estatus\n" 
                 + processing.purchasesByStatus());
         
         System.out.println("Lista de entregados por status:\n\n" 
                 + delivered.purchasesByStatusDate());
-        
+        */
         }catch (InterruptedException ex){
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }catch (Exception ex){
