@@ -5,7 +5,10 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.PurchaseObserver;
+import excercise1.patterns.PurchaseSubscriber;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -14,7 +17,7 @@ import java.util.TreeMap;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public class Purchase extends StatusComparator implements Comparable<Purchase>{
+public class Purchase extends StatusComparator implements Comparable<Purchase>, PurchaseSubscriber{
     
     private int consecutive;
     private GregorianCalendar date;
@@ -22,9 +25,11 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>{
     private TreeMap<String, Product> list;
     private double price;
     private IStrategy shipping;
+    private ArrayList observers;
 
     public Purchase() {
         list = new TreeMap<String, Product>();
+        observers = new ArrayList();
     }
     
     public Purchase(int consecutive, GregorianCalendar date, Status status, TreeMap<String, Product> list) {
@@ -123,7 +128,9 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>{
     }
     
     public boolean updateStatus(){
-        return this.status.updateStatus();
+        boolean temp = this.status.updateStatus();
+        notifyObservers();
+        return temp;
     }
 
     @Override
@@ -131,5 +138,27 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>{
         return status.getDate().compareTo(purchase.status.getDate());
     }    
     
+    @Override
+    public void addPurchaseObserver(PurchaseObserver observer){
+        observers.add(observers);
+    }
+    
+    @Override
+    public void removePurchaseObserver(PurchaseObserver observer){
+        int i = observers.indexOf(observer);
+        if(i >= 0){
+            observers.remove(i);
+        }
+    }
+    
+    @Override
+    public void notifyObservers(){
+        Iterator iterator = observers.iterator();
+        while(iterator.hasNext()){
+            PurchaseObserver observer = (PurchaseObserver) iterator.next();
+            observer.update(this.status, null);
+        }
+    }
+
     
 }

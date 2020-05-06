@@ -5,6 +5,9 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.PurchaseObserver;
+import excercise1.patterns.PurchaseSubscriber;
+import excercise1.patterns.WarehouseStaff;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -12,20 +15,23 @@ import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 
 /**
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public class ProcessingList {
+public class ProcessingList implements PurchaseSubscriber{
     
     private TreeMap<Integer, Purchase> list;
     private static int consecutive;
+    private ArrayList observers;
 
     public ProcessingList() {
         this.list = new TreeMap<Integer, Purchase>();
         this.consecutive = 1;
+        observers = new ArrayList();
     }
     
     public void addPurchase(Purchase purchase){
@@ -36,6 +42,7 @@ public class ProcessingList {
             purchase.setStatus(new Status(gregorian));
             this.list.put(purchase.getConsecutive(), purchase);
         }
+        notifyObservers();
     }
     
     public void updateStatus(int consecutive){
@@ -65,6 +72,25 @@ public class ProcessingList {
             s += iterator.next() + "\n\n";
         }
         return s;
+    }
+
+    @Override
+    public void addPurchaseObserver(PurchaseObserver observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removePurchaseObserver(PurchaseObserver observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        Iterator iterator = observers.iterator();
+        while(iterator.hasNext()){
+            ((WarehouseStaff) iterator.next()).addProduct(this.list.lastKey(),
+                    this.list.lastEntry().getValue());
+        }
     }
     
 }
