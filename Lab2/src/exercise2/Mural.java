@@ -5,6 +5,7 @@
  */
 package exercise2;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,6 +40,16 @@ public class Mural<T> implements Cloneable {
         return figuresList.get(i);
     }
     
+    public String print(){
+        String s = "";
+        Iterator itList = figuresList.iterator();
+        while(itList.hasNext()){
+            s += itList.next().toString() + "\n";
+        }
+        return s;
+    }
+    
+    @Override
     public Object clone() throws CloneNotSupportedException{
         return super.clone();
     }

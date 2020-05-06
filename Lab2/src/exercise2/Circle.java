@@ -9,7 +9,7 @@ package exercise2;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public class Circle extends Figure {
+public class Circle extends Figure implements Cloneable{
     
     private int radius;
 
@@ -37,6 +37,10 @@ public class Circle extends Figure {
     @Override
     public String ls() {
         return toString();
+    }
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
     }
 
 }

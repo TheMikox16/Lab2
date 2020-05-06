@@ -12,7 +12,7 @@ import java.util.Iterator;
  *
  * @author Sean
  */
-public class MixedFigure extends Figure implements AbstractComp {
+public class MixedFigure extends Figure implements AbstractComp , Cloneable {
 
     private String name;
     private ArrayList<AbstractComp> absList = new ArrayList<>();
@@ -90,4 +90,8 @@ public class MixedFigure extends Figure implements AbstractComp {
         return txt;
     }
     
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
 }

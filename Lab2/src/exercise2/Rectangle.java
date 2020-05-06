@@ -9,7 +9,7 @@ package exercise2;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public class Rectangle extends Figure{
+public class Rectangle extends Figure implements Cloneable{
     
     private int high;
     private int width;
@@ -50,6 +50,10 @@ public class Rectangle extends Figure{
         return toString();
     }
     
+    @Override
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
     
     
 }
