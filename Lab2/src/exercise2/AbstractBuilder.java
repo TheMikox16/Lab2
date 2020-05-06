@@ -11,12 +11,12 @@ package exercise2;
  */
 public interface AbstractBuilder {
     
-    public abstract void buildCoordenates();
+    public abstract void buildCoordenates(int n);
     
-    public abstract void buildSide();
+    public abstract void buildSide(int n);
     
-    public abstract void buildSide2();
+    public abstract void buildSide2(int n);
     
-    public abstract Figure getFigure() throws PersonalizedException();
+    public abstract Figure getFigure() throws PersonalizedException;
     
 }
