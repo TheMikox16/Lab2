@@ -5,6 +5,7 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.IStrategy;
 import excercise1.patterns.PurchaseObserver;
 import excercise1.patterns.PurchaseSubscriber;
 import java.text.SimpleDateFormat;

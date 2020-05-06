@@ -5,6 +5,11 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.ShipmentByPlane;
+import excercise1.purchaseapp.DeliveredList;
+import excercise1.purchaseapp.ProcessingList;
+import excercise1.purchaseapp.Product;
+import excercise1.purchaseapp.Purchase;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,7 +32,7 @@ public class Main {
         p1.addProduct(new Product("213", 1, 5.7));
         p1.addProduct(new Product("111", 5, 0.7));
         
-        p1.setShipping(new ShipmentByBoat());
+        p1.setShipping(new ShipmentByPlane());
         p1.shipping();
         
         p1.removeProduct("111");

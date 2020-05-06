@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package excercise1.purchaseapp;
-
-
+package excercise1.patterns;
 
 /**
  *
  * @author Sean
  */
-public interface IStrategy {
+public interface IShipments {
     
-    public void shipping(double totalWeight);
+    public ShipmentByPlane shipmentPlaneDecorator(ShipmentByPlane object);
+    
+    public ShipmentByBoat shipmentBoatDecorator(ShipmentByBoat object);
 }
