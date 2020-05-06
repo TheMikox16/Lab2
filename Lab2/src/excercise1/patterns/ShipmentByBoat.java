@@ -12,7 +12,7 @@ package excercise1.patterns;
 public class ShipmentByBoat implements IStrategy{
 
     
-    private String additionals = "tarjeta de regalo";
+    private String additionals;
     private double price;
     private int code;
 
@@ -56,7 +56,11 @@ public class ShipmentByBoat implements IStrategy{
                 totalPrice = (totalWeight + (totalWeight* 0.15)) + ((totalWeight + (totalWeight* 0.15)) * price /100);
                 System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice);
             }
+        }else{
+            totalPrice = (totalWeight + (totalWeight* 0.15));
+            System.out.println("El precio del envio por avion es: " + totalPrice);
         }
+        
     }
     
 }
