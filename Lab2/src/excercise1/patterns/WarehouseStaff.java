@@ -43,7 +43,7 @@ public class WarehouseStaff implements PurchaseObserver{
 
     @Override
     public void addProduct(Integer key, Purchase value) {
-        
+        list.put(key, value);
     }
     
 }
