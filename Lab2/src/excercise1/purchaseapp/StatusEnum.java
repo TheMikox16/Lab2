@@ -14,7 +14,7 @@ public enum StatusEnum {
     DELIVERED("Entregado", null),
     IN_TRANSIT("En tránsito", DELIVERED),
     DISPATCH_WAITING("En espera para ser despachado", IN_TRANSIT),
-    PROCESSING("En procesamient", DISPATCH_WAITING),
+    PROCESSING("En procesamiento", DISPATCH_WAITING),
     PROCESS_WAITING("En espera de ser procesado", PROCESSING);
     
     private final String description;

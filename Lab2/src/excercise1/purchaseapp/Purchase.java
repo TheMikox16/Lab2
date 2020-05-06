@@ -94,7 +94,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
             productsText += product +", peso unidades: " + product.generalWeigth() + "\n";
         }
         return "Compra #" + consecutive + ", fecha: " + format.format(date.getTime())
-                + " Estado: " + status.getDescription() + "\n\nLista de productos\n" 
+                + " Estado: " + status.getDescription().getDescription() + "\n\nLista de productos\n" 
                 + productsText + "\nPeso total: " + totalWeigth();
     }
     

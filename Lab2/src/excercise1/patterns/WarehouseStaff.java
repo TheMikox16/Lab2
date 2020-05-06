@@ -43,7 +43,7 @@ public class WarehouseStaff implements PurchaseObserver{
         Iterator values = this.list.values().iterator();
         while(keys.hasNext() & values.hasNext()){
             Purchase temp = (Purchase) values.next();
-            s += keys.next() + " - " + temp.getStatus().getDescription() + "\n";
+            s += keys.next() + " - " + temp.getStatus().getDescription().getDescription() + "\n";
         }
         System.out.println("Lista de Bodega:\n" + s);
     }

@@ -30,7 +30,8 @@ public class Buyer implements PurchaseObserver{
         System.out.println("COMPRADOR:\n");
         Iterator iterator = list.iterator();
         while(iterator.hasNext()){
-            s += iterator.next().toString() + "\n";
+            StatusEnum temp = (StatusEnum) iterator.next();
+            s += temp.getDescription() + "\n";
         }
         System.out.println("Historial de estados:\n" + s);
     }

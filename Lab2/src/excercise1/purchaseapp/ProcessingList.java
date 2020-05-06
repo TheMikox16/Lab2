@@ -55,7 +55,7 @@ public class ProcessingList implements PurchaseSubscriber{
         String s = "";
         Iterator<Purchase> iterator = list.values().iterator();
         while (iterator.hasNext()) {
-            s += iterator.next()+ "\n\n";
+            s += iterator.next() + "\n\n";
         }
         return s;
     }
