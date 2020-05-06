@@ -13,5 +13,5 @@ package excercise1.purchaseapp;
  */
 public interface IStrategy {
     
-    public double shipping(double totalWeight);
+    public void shipping(double totalWeight);
 }

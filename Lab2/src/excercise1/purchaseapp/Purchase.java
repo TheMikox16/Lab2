@@ -23,7 +23,6 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     private GregorianCalendar date;
     private Status status;
     private TreeMap<String, Product> list;
-    private double price;
     private IStrategy shipping;
     private ArrayList observers;
 
@@ -46,13 +45,8 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     public void setShipping(IStrategy shipping) {
         this.shipping = shipping;
     }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = shipping.shipping(totalWeigth());
+    public void shipping(){
+        shipping.shipping(totalWeigth());
     }
 
     public int getConsecutive() {
@@ -99,8 +93,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         }
         return "Compra #" + consecutive + ", fecha: " + format.format(date.getTime())
                 + " Estado: " + status.getDescription() + "\n\nLista de productos\n" 
-                + productsText + "\nPeso total: " + totalWeigth() + "\nPrecio total del envio: "
-                + price;
+                + productsText + "\nPeso total: " + totalWeigth();
     }
     
     public double totalWeigth(){

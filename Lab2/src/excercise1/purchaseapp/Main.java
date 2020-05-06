@@ -28,7 +28,7 @@ public class Main {
         p1.addProduct(new Product("111", 5, 0.7));
         
         p1.setShipping(new ShipmentByBoat());
-       // System.out.println(p1.
+        p1.shipping();
         
         p1.removeProduct("111");
                 
@@ -58,8 +58,8 @@ public class Main {
         Thread.sleep(200);
         processing.addPurchase(p3);
         
-        System.out.println("Lista por codigo:\n" 
-                + processing.purchasesByCode());
+        //System.out.println("Lista por codigo:\n" 
+               // + processing.purchasesByCode());
         
         processing.updateStatus(1);
         Thread.sleep(100);

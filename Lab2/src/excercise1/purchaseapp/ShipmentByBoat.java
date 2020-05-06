@@ -11,11 +11,12 @@ package excercise1.purchaseapp;
  */
 public class ShipmentByBoat implements IStrategy{
 
-
+    private Purchase purchase;
     @Override
-    public double shipping(double totalWeight) {
+    public void shipping(double totalWeight) {
         double price = (totalWeight + totalWeight* 0.15);
-        return price;
+        
+        System.out.println("El precio del envio por bote es: "+ price);
     }
     
 }
