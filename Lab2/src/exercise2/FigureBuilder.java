@@ -67,7 +67,8 @@ public class FigureBuilder implements AbstractBuilder{
 
     @Override
     public Figure getFigure() throws PersonalizedException {
-        if(this.figure.getCoordenates() == 0){
+        if(!(this.figure instanceof MixedFigure) 
+                && this.figure.getCoordenates() == 0){
             throw new PersonalizedException("Coordenadas no validas");
         }
         if(this.figure instanceof Circle){

@@ -31,7 +31,7 @@ public class Circle extends Figure{
 
     @Override
     public String toString() {
-        return "Circulo:\n" + super.toString() + ", Radio: " + radius;
+        return "Circulo:\n" + super.toString() + ", Radio: " + radius + "\n";
     }
 
     @Override

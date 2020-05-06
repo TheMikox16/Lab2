@@ -42,7 +42,7 @@ public class Rectangle extends Figure{
     @Override
     public String toString() {
         return "Rectangulo:\n" + super.toString() + ", Alto: " + high 
-                + ", Ancho: " + width;
+                + ", Ancho: " + width + "\n";
     }
 
     @Override
