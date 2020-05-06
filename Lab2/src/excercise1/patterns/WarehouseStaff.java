@@ -33,6 +33,7 @@ public class WarehouseStaff implements PurchaseObserver{
     @Override
     public void printList() {
         String s = "";
+        System.out.println("ENCARGADO DE BODEGA:\n");
         Iterator keys = this.list.keySet().iterator();
         Iterator values = this.list.values().iterator();
         while(keys.hasNext() & values.hasNext()){

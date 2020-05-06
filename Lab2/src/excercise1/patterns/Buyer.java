@@ -7,6 +7,7 @@ package excercise1.patterns;
 
 import excercise1.purchaseapp.Purchase;
 import excercise1.purchaseapp.Status;
+import excercise1.purchaseapp.StatusEnum;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,16 +17,17 @@ import java.util.Iterator;
  */
 public class Buyer implements PurchaseObserver{
     
-    private ArrayList<Status> list = new ArrayList<>();
+    private ArrayList<StatusEnum> list = new ArrayList<>();
 
     @Override
     public void update(Status status, Purchase purchase) {
-        list.add(status);
+        list.add(status.getDescription());
     }
 
     @Override
     public void printList() {
         String s = "";
+        System.out.println("COMPRADOR:\n");
         Iterator iterator = list.iterator();
         while(iterator.hasNext()){
             s += iterator.next().toString() + "\n";

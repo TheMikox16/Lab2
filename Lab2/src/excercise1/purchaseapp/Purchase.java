@@ -5,6 +5,7 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.Buyer;
 import excercise1.patterns.IStrategy;
 import excercise1.patterns.PurchaseObserver;
 import excercise1.patterns.PurchaseSubscriber;
@@ -25,7 +26,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     private Status status;
     private TreeMap<String, Product> list;
     private IStrategy shipping;
-    private ArrayList observers;
+    private ArrayList<PurchaseObserver> observers;
 
     public Purchase() {
         list = new TreeMap<String, Product>();
@@ -134,7 +135,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     
     @Override
     public void addPurchaseObserver(PurchaseObserver observer){
-        observers.add(observers);
+        observers.add(observer);
     }
     
     @Override
@@ -151,6 +152,17 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         while(iterator.hasNext()){
             PurchaseObserver observer = (PurchaseObserver) iterator.next();
             observer.update(this.status, null);
+        }
+    }
+    
+    @Override
+    public void printObservers(){
+        Iterator iterator = observers.iterator();
+        while(iterator.hasNext()){
+            PurchaseObserver observer = (PurchaseObserver) iterator.next();
+            if(observer instanceof Buyer){
+                observer.printList();
+            }
         }
     }
 

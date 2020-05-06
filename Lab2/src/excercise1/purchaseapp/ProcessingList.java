@@ -83,6 +83,15 @@ public class ProcessingList implements PurchaseSubscriber{
     public void removePurchaseObserver(PurchaseObserver observer) {
         observers.remove(observer);
     }
+    
+    @Override
+    public void printObservers(){
+        Iterator iterator = observers.iterator();
+        while(iterator.hasNext()){
+            PurchaseObserver observer = (PurchaseObserver) iterator.next();
+            observer.printList();
+        }
+    }
 
     @Override
     public void notifyObservers() {

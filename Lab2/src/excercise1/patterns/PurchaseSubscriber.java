@@ -17,6 +17,8 @@ public interface PurchaseSubscriber {
     
     public void removePurchaseObserver(PurchaseObserver observer);
     
+    public void printObservers();
+    
     public void notifyObservers();
     
 }
