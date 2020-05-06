@@ -15,9 +15,17 @@ import java.util.TreeSet;
 public class DeliveredList {
     
     private TreeSet<Purchase> list;
-
-    public DeliveredList() {
+    private static DeliveredList instance = new DeliveredList();
+    
+    private DeliveredList() {
         this.list = new TreeSet<Purchase>();
+    }
+    
+    public static DeliveredList getInstance(){
+        if(instance == null){
+            instance = new DeliveredList();
+        }
+        return instance;
     }
     
     public void addPurchase(Purchase purchase){

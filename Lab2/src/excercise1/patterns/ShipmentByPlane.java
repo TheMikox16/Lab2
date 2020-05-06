@@ -15,7 +15,7 @@ import excercise1.patterns.IStrategy;
  */
 public class ShipmentByPlane implements IStrategy{
 
-    private String additionals = "tarjeta de regalo";
+    private String additionals;
     private double price;
     private int code;
 
@@ -61,7 +61,5 @@ public class ShipmentByPlane implements IStrategy{
             }
         }
     }
-    
-    
     
 }

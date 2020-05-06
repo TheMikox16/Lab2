@@ -22,8 +22,8 @@ import java.util.logging.Logger;
  */
 public class Main {
     
-    public static DeliveredList delivered = new DeliveredList();
-    public static ProcessingList processing = new ProcessingList();
+    public static DeliveredList delivered = DeliveredList.getInstance();
+    public static ProcessingList processing = ProcessingList.getInstance();
     
     public static void main(String[] args){
         try{
@@ -31,8 +31,6 @@ public class Main {
         WarehouseStaff staff = new WarehouseStaff();    
         
         processing.addPurchaseObserver(staff);
-        
-        
         
         Purchase p1 = new Purchase();
         p1.addPurchaseObserver(new Buyer());

@@ -39,7 +39,7 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         this.status = status;
         this.list = list;
     }
-
+    
     public IStrategy getShipping() {
         return shipping;
     }

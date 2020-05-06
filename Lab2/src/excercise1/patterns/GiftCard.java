@@ -34,8 +34,8 @@ public class GiftCard extends ShipmentsDecorator{
     }
     
     public ShipmentByPlane addGiftCardPlane(ShipmentByPlane ship){
-        discount = Math.random()*100 + 1;
-        code = (int)Math.random()* 100000 + 1000;
+        discount = (double) (Math.random()*100 + 1);
+        code = (int) (Math.random()* 100000 + 1000);
         ship.setCode(code);
         ship.setAdditionals(additional);
         ship.setPrice(discount);

@@ -27,11 +27,19 @@ public class ProcessingList implements PurchaseSubscriber{
     private TreeMap<Integer, Purchase> list;
     private static int consecutive;
     private ArrayList observers;
+    private static ProcessingList instance = new ProcessingList();
 
-    public ProcessingList() {
+    private ProcessingList() {
         this.list = new TreeMap<Integer, Purchase>();
         this.consecutive = 1;
         observers = new ArrayList();
+    }
+    
+    public static ProcessingList getInstance(){
+        if(instance == null){
+            instance = new ProcessingList();
+        }
+        return instance;
     }
     
     public void addPurchase(Purchase purchase){
