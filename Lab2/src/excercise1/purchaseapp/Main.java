@@ -5,7 +5,10 @@
  */
 package excercise1.purchaseapp;
 
+import excercise1.patterns.BasicShipment;
 import excercise1.patterns.Buyer;
+import excercise1.patterns.GiftWrap;
+import excercise1.patterns.IShipments;
 import excercise1.patterns.ShipmentByPlane;
 import excercise1.patterns.WarehouseStaff;
 import excercise1.purchaseapp.DeliveredList;
@@ -45,6 +48,10 @@ public class Main {
         p1.addProduct(new Product("111", 5, 0.7));
         
         p1.setShipping(new ShipmentByPlane());
+        ShipmentByPlane shipmentPlane = new ShipmentByPlane();
+        IShipments ship = new BasicShipment();
+        IShipments giftDecorator = new GiftWrap(ship);
+        giftDecorator.shipmentPlaneDecorator(shipmentPlane);
         p1.shipping();
         
         p1.removeProduct("111");
