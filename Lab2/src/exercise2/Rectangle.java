@@ -12,34 +12,34 @@ package exercise2;
 public class Rectangle extends Figure{
     
     private int high;
-    private int weigth;
+    private int width;
 
     public Rectangle(int high, int weigth, int coordenates) {
         super(coordenates);
         this.high = high;
-        this.weigth = weigth;
+        this.width = weigth;
     }
 
     public int getHigh() {
         return high;
     }
 
-    public int getWeigth() {
-        return weigth;
+    public int getWidth() {
+        return width;
     }
 
     public void setHigh(int high) {
         this.high = high;
     }
 
-    public void setWeigth(int weigth) {
-        this.weigth = weigth;
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     @Override
     public String toString() {
         return "Rectangulo:\n" + super.toString() + ", Alto: " + high 
-                + ", Ancho: " + weigth;
+                + ", Ancho: " + width;
     }
     
     
