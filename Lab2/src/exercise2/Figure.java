@@ -9,7 +9,7 @@ package exercise2;
  *
  * @author Miguel Angel Egoavil Mathison
  */
-public abstract class Figure implements AbstractComp{
+public abstract class Figure implements AbstractComp, Cloneable{
     
     private int coordenates;
 
@@ -33,6 +33,10 @@ public abstract class Figure implements AbstractComp{
         return "Coordenadas: " + coordenates;
     }
     
+    @Override
     public abstract String ls();
+    
+    @Override
+    public abstract Figure clone() throws CloneNotSupportedException;
     
 }

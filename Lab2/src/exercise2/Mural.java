@@ -5,39 +5,35 @@
  */
 package exercise2;
 
-import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  *
  * @author Sean
  */
-public class Mural<T> implements Cloneable {
+public class Mural {
     
-    private final List<T> figuresList = new LinkedList<>();
+    private final List<Figure> figuresList = new LinkedList<Figure>();
 
     public Mural() {
     }
     
-    public List<T> getList(){
+    public List<Figure> getList(){
         return figuresList;
     }
     
-    public void add(T object){
-        figuresList.add(object);
+    public void add(Figure figure){
+        figuresList.add(figure);
     }
     
-    public boolean delete(T object){
-        return figuresList.remove(object);
+    public boolean delete(Figure figure){
+        return figuresList.remove(figure);
     }
     
     public int hash(){
         return figuresList.hashCode();
-    }
-    
-    public T search(int i){
-        return figuresList.get(i);
     }
     
     public String print(){
@@ -49,9 +45,9 @@ public class Mural<T> implements Cloneable {
         return s;
     }
     
-    @Override
-    public Object clone() throws CloneNotSupportedException{
-        return super.clone();
+    public Figure clone(int n) throws CloneNotSupportedException{
+        Object[] temp = this.figuresList.toArray();
+        return ((Figure) temp[n]).clone();
     }
     
 }

@@ -28,16 +28,21 @@ public class Main {
             mural.add(f1);
             mural.add(f2);
             mural.add(f3);
-            System.out.println("Mural numero 1: " + "\nsu codigo hash:" + mural.hash()+
-                    mural.print());
+            System.out.println("Mural numero 1:\n" + mural.print());
             try{
-            Mural mural2 = (Mural) mural.clone();
+            Figure clone = mural.clone(0);
             f1.setCoordenates(45);
+            
+            System.out.println("Figura clonada:\n" + clone.toString()
+                + "Original con coordenadas cambiadas:\n" + f1.toString()
+                + "\nHash code original: " + f1.hashCode() 
+                + ", copia: " + clone.hashCode() + "\n");
+            
             f2.setCoordenates(58);
-            System.out.println("Mural numero 2: " + "\nsu codigo hash:" + mural.hash()+
-                    mural.print());
+            mural.add(clone);
+            System.out.println("Mural numero 2:\n" + mural.print());
            
-            System.out.println("Son iguales?"+ (mural == mural2));
+            System.out.println("Son iguales?"+ (f1 == clone));
             }catch(CloneNotSupportedException ex){
                 System.out.println(ex.getMessage());
             }
