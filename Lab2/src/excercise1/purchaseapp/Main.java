@@ -7,6 +7,8 @@ package excercise1.purchaseapp;
 
 import excercise1.patterns.BasicShipment;
 import excercise1.patterns.Buyer;
+import excercise1.patterns.FragilWrap;
+import excercise1.patterns.GiftCard;
 import excercise1.patterns.GiftWrap;
 import excercise1.patterns.IShipments;
 import excercise1.patterns.ShipmentByPlane;
@@ -48,11 +50,14 @@ public class Main {
         p1.setShipping(new ShipmentByPlane());
         ShipmentByPlane shipmentPlane = new ShipmentByPlane();
         IShipments ship = new BasicShipment();
-        IShipments giftDecorator = new GiftWrap(ship);
+        IShipments giftDecorator = new FragilWrap(ship);
+        IShipments giftDecorator1 = new GiftCard(ship);
         giftDecorator.shipmentPlaneDecorator(shipmentPlane);
-        //p1.shipping();
+        giftDecorator1.shipmentPlaneDecorator(shipmentPlane);
+        p1.shipping();
         
-        shipmentPlane.print();
+        shipmentPlane.print(p1);
+        
         
         p1.removeProduct("111");
                 

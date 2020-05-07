@@ -12,7 +12,7 @@ package excercise1.patterns;
 public class GiftWrap extends ShipmentsDecorator{
     
     private String additional = "Envoltura para regalo";
-    private double price = 5.0;
+    private int price = 5;
     
     public GiftWrap(IShipments decoratorShips) {
         super(decoratorShips);
@@ -33,14 +33,24 @@ public class GiftWrap extends ShipmentsDecorator{
     }
     
     public ShipmentByPlane addGiftWrapPlane(ShipmentByPlane ship){
-        ship.setAdditionals(additional);
-        ship.setPrice(price);
+        if(ship.getAdditionals() != null){
+            ship.setAdditionals(ship.getAdditionals() + ", " + additional);
+            ship.setIncrease(price);
+        }else{
+            ship.setAdditionals( additional);
+            ship.setIncrease(price);
+        }
         return ship;
     }
     
     public ShipmentByBoat addGiftWrapBoat(ShipmentByBoat ship){
-        ship.setAdditionals(additional);
-        ship.setPrice(price);
+        if(ship.getAdditionals() != null){
+            ship.setAdditionals(ship.getAdditionals() + ", " + additional);
+            ship.setIncrease(price);
+        }else{
+            ship.setAdditionals( additional);
+            ship.setIncrease(price);
+        }
         return ship;
     }
     

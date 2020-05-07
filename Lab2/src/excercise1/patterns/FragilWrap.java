@@ -12,7 +12,7 @@ package excercise1.patterns;
 public class FragilWrap extends ShipmentsDecorator{
     
     private String additional = "Envoltura adicional por fragil";
-    private double price = 1.0;
+    private int price = 1;
     
     public FragilWrap(IShipments decoratorShips) {
         super(decoratorShips);
@@ -33,14 +33,24 @@ public class FragilWrap extends ShipmentsDecorator{
     }
     
     public ShipmentByPlane addFragilWrapPlane(ShipmentByPlane ship){
-        ship.setAdditionals(additional);
-        ship.setPrice(price);
+        if(ship.getAdditionals() != null){
+            ship.setAdditionals(ship.getAdditionals() + ", " + additional);
+            ship.setTax(price);
+        }else{
+            ship.setAdditionals( additional);
+            ship.setTax(price);
+        }
         return ship;
     }
     
     public ShipmentByBoat addFragilWrapBoat(ShipmentByBoat ship){
-        ship.setAdditionals(additional);
-        ship.setPrice(price);
+        if(ship.getAdditionals() != null){
+            ship.setAdditionals(ship.getAdditionals() + ", " + additional);
+            ship.setTax(price);
+        }else{
+            ship.setAdditionals( additional);
+            ship.setTax(price);
+        }
         return ship;
     }
     
