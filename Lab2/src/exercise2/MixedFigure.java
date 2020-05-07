@@ -15,18 +15,14 @@ import java.util.Iterator;
 public class MixedFigure extends Figure implements AbstractComp , Cloneable {
 
     private ArrayList<AbstractComp> absList = new ArrayList<>();
-    private Indentation inden = new Indentation();
+    private Indentation inden;
 
-    public MixedFigure() {
+    public MixedFigure(Indentation inden) {
+        this.inden = inden;
     }
     
     public MixedFigure(ArrayList<AbstractComp> absList) {
         this.absList = absList;
-    }
-    
-    public MixedFigure(Indentation inden) {
-        this.inden = inden;
-        absList = new ArrayList<>();
     }
 
     public ArrayList<AbstractComp> getAbsList() {
@@ -37,14 +33,6 @@ public class MixedFigure extends Figure implements AbstractComp , Cloneable {
         this.absList = absList;
     }
 
-    public Indentation getInden() {
-        return inden;
-    }
-
-    public void setInden(Indentation inden) {
-        this.inden = inden;
-    }
-    
     public void addAbs(AbstractComp abs){
         if(!absList.contains(abs)){
             absList.add(abs);
@@ -63,18 +51,21 @@ public class MixedFigure extends Figure implements AbstractComp , Cloneable {
     @Override
     public String ls() {
         String txt = "";
-        txt = "Figura Mixta:\nLista de figuras:\n" + print() +"\n";
-        inden.increaseIndentation();
+        txt = inden.getIndentation() + "Figura Mixta:\n" 
+                + inden.getIndentation() + " Lista de figuras:\n"
+                + print();
         return txt;
     }
     
     public String print(){
         String txt = "";
         Iterator itList = absList.iterator();
+        inden.increaseIndentation();
         while(itList.hasNext()){
             Figure temp = (Figure) itList.next();
             txt += temp.ls();
         }
+        inden.decreaseIndentation();
         return txt;
     }
     

@@ -11,9 +11,9 @@ package exercise2;
  */
 public class Scheduler {
     
-    public Figure createFigure(int n, int... specs) throws PersonalizedException{
+    public Figure createFigure(Indentation inden, int n, int... specs) throws PersonalizedException{
         FigureBuilder builder = new FigureBuilder();
-        builder.buildFigure(n);
+        builder.buildFigure(inden, n);
         if(specs.length == 2){
             builder.buildCoordenates(specs[0]);
             builder.buildSide(specs[1]);
@@ -27,9 +27,9 @@ public class Scheduler {
         return null;
     }
     
-    public Figure createFigure(Figure... figures) throws PersonalizedException{
+    public Figure createFigure(Indentation inden, Figure... figures) throws PersonalizedException{
         FigureBuilder builder = new FigureBuilder();
-        builder.buildFigure(2);
+        builder.buildFigure(inden, 2);
         builder.buildMixed(figures);
         return builder.getFigure();
     }

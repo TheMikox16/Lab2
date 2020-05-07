@@ -28,13 +28,16 @@ public abstract class Figure implements AbstractComp, Cloneable{
         this.coordenates = coordenates;
     }
 
+
     @Override
     public String toString() {
         return "Coordenadas: " + coordenates;
     }
     
     @Override
-    public abstract String ls();
+    public String ls(){
+        return "Coordenadas: " + coordenates;
+    }
     
     @Override
     public abstract Figure clone() throws CloneNotSupportedException;

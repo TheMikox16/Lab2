@@ -16,16 +16,16 @@ public class FigureBuilder implements AbstractBuilder{
     protected Figure figure;
     
     @Override
-    public void buildFigure(int n){
+    public void buildFigure(Indentation inden, int n){
         switch(n){
             case 0:
-                this.figure = new Circle();
+                this.figure = new Circle(inden);
                 break;
             case 1:
-                this.figure = new Rectangle();
+                this.figure = new Rectangle(inden);
                 break;
             case 2:
-                this.figure = new MixedFigure();
+                this.figure = new MixedFigure(inden);
         }
     }
     

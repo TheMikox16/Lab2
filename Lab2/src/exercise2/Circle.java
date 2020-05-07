@@ -12,10 +12,10 @@ package exercise2;
 public class Circle extends Figure implements Cloneable{
     
     private int radius;
-    private final Indentation iden = new Indentation();
+    private Indentation inden;
 
-    public Circle() {
-        iden.increaseIndentation();
+    public Circle(Indentation inden) {
+        this.inden = inden;
     }
     
     public Circle(int radius, int coordenates) {
@@ -38,8 +38,8 @@ public class Circle extends Figure implements Cloneable{
 
     @Override
     public String ls() {
-        return iden.getIndentation() + "Circulo:\n"
-                + iden.getIndentation() + super.toString() 
+        return inden.getIndentation() + "Circulo:\n" 
+                +  inden.getIndentation() + super.ls() 
                 + ", Radio: " + radius + "\n";
     }
     

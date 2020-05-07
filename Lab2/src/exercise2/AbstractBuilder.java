@@ -11,7 +11,7 @@ package exercise2;
  */
 public interface AbstractBuilder {
     
-    public abstract void buildFigure(int n);
+    public abstract void buildFigure(Indentation inden, int n);
     
     public abstract void buildCoordenates(int n);
     

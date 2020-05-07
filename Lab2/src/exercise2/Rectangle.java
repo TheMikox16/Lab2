@@ -13,10 +13,10 @@ public class Rectangle extends Figure implements Cloneable{
     
     private int high;
     private int width;
-    private final Indentation iden = new Indentation();
+    private Indentation inden;
 
-    public Rectangle() {
-        iden.increaseIndentation();
+    public Rectangle(Indentation inden) {
+        this.inden = inden;
     }
     
     public Rectangle(int high, int weigth, int coordenates) {
@@ -49,8 +49,8 @@ public class Rectangle extends Figure implements Cloneable{
 
     @Override
     public String ls() {
-        return iden.getIndentation() + "Circulo:\n"
-                + iden.getIndentation() + super.toString() 
+        return inden.getIndentation() + "Rectangulo:\n" 
+                + inden.getIndentation() + super.ls() 
                 + ", Alto: " + high 
                 + ", Ancho: " + width + "\n";
     }

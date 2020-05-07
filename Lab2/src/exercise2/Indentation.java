@@ -11,7 +11,7 @@ package exercise2;
  */
 public class Indentation {
 
-    private final StringBuffer sub;
+    private StringBuffer sub;
 
     public Indentation() {
         sub = new StringBuffer();
@@ -22,7 +22,7 @@ public class Indentation {
     }
 
     public void increaseIndentation() {
-        sub.append("     ");
+        sub.append("   ");
     }
 
     public void decreaseIndentation() {
