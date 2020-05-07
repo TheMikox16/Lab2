@@ -6,6 +6,7 @@
 package excercise1.patterns;
 
 import excercise1.patterns.IStrategy;
+import excercise1.purchaseapp.Purchase;
 
 
 
@@ -18,6 +19,8 @@ public class ShipmentByPlane implements IStrategy{
     private String additionals;
     private double price;
     private int code;
+    private Purchase pur;
+    private double totalPrice;
 
     public int getCode() {
         return code;
@@ -45,25 +48,28 @@ public class ShipmentByPlane implements IStrategy{
     
     @Override
     public void shipping(double totalWeight) {
-        double totalPrice;
-        if(additionals != null){
-            System.out.println("Hay adicionales al envio: " + additionals);
-            if(additionals.equalsIgnoreCase("Envoltura para regalo")){
-                totalPrice = (totalWeight * 30) + price;
-                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice);
-            }else if(additionals.equalsIgnoreCase("Tarjeta de regalo")){
-                totalPrice = (totalWeight * 30) - ((totalWeight * 30) * (price / 100));
-                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice +
-                        "\nY el codigo de tarjeta de descuento es: " + code);
-            }else if(additionals.equalsIgnoreCase("Envoltura adicional por fragil")){
-                totalPrice = (totalWeight * 30) + ((totalWeight * 30) * price /100);
-                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice);
-            }
-        }else{
             totalPrice = (totalWeight * 30);
             System.out.println("El precio del envio por avion es: " + totalPrice);
         }
         
+    
+    public void print(){
+        if(getAdditionals() != null){
+            System.out.println("Hay adicionales al envio: " + getAdditionals());
+            if(getAdditionals().equalsIgnoreCase("Envoltura para regalo")){
+                totalPrice = (pur.totalWeigth() * 30) + getPrice();
+                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice);
+            }else if(getAdditionals().equalsIgnoreCase("Tarjeta de regalo")){
+                totalPrice = (pur.totalWeigth() * 30) - ((pur.totalWeigth() * 30) * (getPrice() / 100));
+                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice +
+                        "\nY el codigo de tarjeta de descuento es: " + code);
+            }else if(getAdditionals().equalsIgnoreCase("Envoltura adicional por fragil")){
+                totalPrice = (pur.totalWeigth() * 30) + ((pur.totalWeigth() * 30) * getPrice() /100);
+                System.out.println ("\nEl precio total del envio con los adicionales es: " + totalPrice);
+            }else{
+                System.out.println("El envio no tiene adicionales"); 
+            }
+        }
     }
     
 }

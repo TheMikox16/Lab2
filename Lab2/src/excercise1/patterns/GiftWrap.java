@@ -11,7 +11,7 @@ package excercise1.patterns;
  */
 public class GiftWrap extends ShipmentsDecorator{
     
-    private String additional = "Envoltura de regalo";
+    private String additional = "Envoltura para regalo";
     private double price = 5.0;
     
     public GiftWrap(IShipments decoratorShips) {

@@ -50,7 +50,9 @@ public class Main {
         IShipments ship = new BasicShipment();
         IShipments giftDecorator = new GiftWrap(ship);
         giftDecorator.shipmentPlaneDecorator(shipmentPlane);
-        p1.shipping();
+        //p1.shipping();
+        
+        shipmentPlane.print();
         
         p1.removeProduct("111");
                 
