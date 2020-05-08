@@ -5,13 +5,13 @@
  */
 package excercise1.patterns;
 
-import excercise1.patterns.IStrategy;
 import excercise1.purchaseapp.Purchase;
 
 
 
 /**
- *
+ * Clase que implementa la interfaz IStrategy para generar el envio por barco.
+ * 
  * @author Miguel Angel Egoavil Mathison  Carne: B92695
  * @author Sean Stward Campos Siles       Carne: B91569
  */

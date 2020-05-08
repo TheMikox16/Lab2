@@ -5,12 +5,10 @@
  */
 package excercise1.patterns;
 
-import excercise1.patterns.ShipmentByPlane;
-import excercise1.patterns.ShipmentByBoat;
-import excercise1.patterns.IShipments;
-
 /**
- *
+ * Clase abstracta que es el decorador e implementa los metodos de la intefaz
+ * IShipments
+ * 
  * @author Miguel Angel Egoavil Mathison  Carne: B92695
  * @author Sean Stward Campos Siles       Carne: B91569
  */
@@ -22,12 +20,24 @@ public abstract class ShipmentsDecorator implements IShipments{
         this.decoratorShips = decoratorShips;
     }
     
+    /**
+    * Metodo de la interfaz grafica usador para implementar la decoracion de los
+    * envios por avion.
+    * 
+    * @param object maneja el envio por avion
+    */
     @Override
     public ShipmentByPlane shipmentPlaneDecorator(ShipmentByPlane object){
         this.decoratorShips.shipmentPlaneDecorator(object);
         return object;
     }
     
+    /**
+    * Metodo de la interfaz grafica usador para implementar la decoracion de los
+    * envios por barco
+    * 
+    * @param object maneja el envio por Barco
+    */
     @Override
     public ShipmentByBoat shipmentBoatDecorator(ShipmentByBoat object){
         this.decoratorShips.shipmentBoatDecorator(object);

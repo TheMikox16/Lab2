@@ -6,7 +6,8 @@
 package excercise1.patterns;
 
 /**
- *
+ *  Clase de envio basico que implementa la interfaz IShipment para ser decorado.
+ * 
  * @author Miguel Angel Egoavil Mathison  Carne: B92695
  * @author Sean Stward Campos Siles       Carne: B91569
  */

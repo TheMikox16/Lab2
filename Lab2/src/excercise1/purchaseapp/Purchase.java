@@ -49,6 +49,10 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     public void setShipping(IStrategy shipping) {
         this.shipping = shipping;
     }
+    /*
+    * Metodo que se encarga de inicializar el metodo creado en la interfaz que
+    * va a implementar los diferentes tipos de envios. 
+    */
     public void shipping(){
         shipping.shipping(totalWeigth());
     }

@@ -8,11 +8,16 @@ package excercise1.patterns;
 
 
 /**
- *
+ *  Interfaz que se utiliza por varias clases para desarrollar
+ *  los diferentes tipos de envio.
+ * 
  * @author Miguel Angel Egoavil Mathison  Carne: B92695
  * @author Sean Stward Campos Siles       Carne: B91569
  */
 public interface IStrategy {
     
+    /*
+    * Metodo encargado de mostrar los envios.
+    */
     public void shipping(double totalWeight);
 }
