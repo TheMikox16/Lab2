@@ -6,8 +6,12 @@
 package exercise2;
 
 /**
+ * Figura rectangulo que contiene dos atributos aunados con el atributo del padre,
+ * Figure. Puede clonarse ademas de que permite imprimir sus atributos de forma
+ * identada.
  *
- * @author Miguel Angel Egoavil Mathison
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Rectangle extends Figure implements Cloneable{
     
@@ -47,6 +51,11 @@ public class Rectangle extends Figure implements Cloneable{
                 + ", Ancho: " + width + "\n";
     }
 
+    /**
+     * Agrega identacion a la impresion de el objeto
+     * 
+     * @return String del texto generado
+     */
     @Override
     public String ls() {
         return inden.getIndentation() + "Rectangulo:\n" 
@@ -55,6 +64,14 @@ public class Rectangle extends Figure implements Cloneable{
                 + ", Ancho: " + width + "\n";
     }
     
+    /**
+     * Clona un rectangulo con los mismos atributos pero con punteros diferentes
+     * (diferentes rectangulos) lo que permite modificar dicho clon sin modificar
+     * el original.
+     * 
+     * @return Figure que es la copia del objeto original.
+     * @throws CloneNotSupportedException cuando el clon no pudo ser creado
+     */
     @Override
     public Figure clone() throws CloneNotSupportedException{
         return new Rectangle(this.high, this.width, super.getCoordenates());

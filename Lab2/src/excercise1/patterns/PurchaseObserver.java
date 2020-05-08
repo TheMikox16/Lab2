@@ -9,8 +9,11 @@ import excercise1.purchaseapp.Purchase;
 import excercise1.purchaseapp.Status;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Interfaz que contiene todos los metodos que han de tener
+ * los observadores
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public interface PurchaseObserver {
     

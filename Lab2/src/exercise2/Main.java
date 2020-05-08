@@ -6,8 +6,10 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Clase con el main que ejcuta el programa
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Main {
     

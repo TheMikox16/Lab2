@@ -5,11 +5,12 @@
  */
 package excercise1.patterns;
 
-import excercise1.purchaseapp.Purchase;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Interfaz que deben implementar todas las clases que poseean observadores
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public interface PurchaseSubscriber {
     

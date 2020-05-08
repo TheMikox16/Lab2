@@ -11,7 +11,8 @@ import excercise1.patterns.IShipments;
 
 /**
  *
- * @author Sean
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public abstract class ShipmentsDecorator implements IShipments{
     

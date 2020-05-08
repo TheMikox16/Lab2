@@ -8,8 +8,10 @@ package excercise1.purchaseapp;
 import java.util.GregorianCalendar;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Clase de estado de un producto
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Status {
     

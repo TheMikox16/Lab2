@@ -6,8 +6,10 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Interfaz que indica lo que debe implementar un constructor de figuras
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public interface AbstractBuilder {
     

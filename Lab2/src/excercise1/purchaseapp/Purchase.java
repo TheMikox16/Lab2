@@ -16,8 +16,10 @@ import java.util.Iterator;
 import java.util.TreeMap;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Objeto compra
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Purchase extends StatusComparator implements Comparable<Purchase>, PurchaseSubscriber{
     
@@ -122,6 +124,12 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         return list.remove(code);
     }
     
+    /**
+     * Actualiza el estado de los productos y notifica a los compradores y
+     * empleados
+     * 
+     * @return boolean que especifica si la actualizacion se hizo o no
+     */
     public boolean updateStatus(){
         boolean temp = this.status.updateStatus();
         notifyObservers();
@@ -132,12 +140,22 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
     public int compareTo(Purchase purchase) {
         return status.getDate().compareTo(purchase.status.getDate());
     }    
-    
+
+    /**
+     * Añade un observador
+     * 
+     * @param observer el observador a añadir
+     */    
     @Override
     public void addPurchaseObserver(PurchaseObserver observer){
         observers.add(observer);
     }
     
+    /**
+     * Elimina un observador
+     * 
+     * @param observer observador a eliminar
+     */
     @Override
     public void removePurchaseObserver(PurchaseObserver observer){
         int i = observers.indexOf(observer);
@@ -146,6 +164,10 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         }
     }
     
+    /**
+     * Notifica a todos los observadores sobre una actualizacion en el estado de 
+     * la compra y los actualiza
+     */
     @Override
     public void notifyObservers(){
         Iterator iterator = observers.iterator();
@@ -155,6 +177,9 @@ public class Purchase extends StatusComparator implements Comparable<Purchase>, 
         }
     }
     
+    /**
+     * Imprime a los observadores
+     */
     @Override
     public void printObservers(){
         Iterator iterator = observers.iterator();

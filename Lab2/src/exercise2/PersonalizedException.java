@@ -6,8 +6,11 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Clase de excepciones personalizadas que es llamada cuando en algun punto del
+ * programa se realiza una validacion erronea
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class PersonalizedException extends Exception{
 

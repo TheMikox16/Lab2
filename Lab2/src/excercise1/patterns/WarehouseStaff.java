@@ -12,13 +12,23 @@ import java.util.Iterator;
 import java.util.TreeMap;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Observador empleado de bodega que contiene una lista de todos los productos
+ * (solo su consecutivo y estado) de la lista de compras en procesamiento
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class WarehouseStaff implements PurchaseObserver{
     
     private TreeMap<Integer, Purchase> list = new TreeMap<>();
 
+    /**
+     * Actualiza la lista cuando a un producto se le actualiza su estado. En el
+     * caso de que el producto este en ENTREGADO se saca de la lista
+     * 
+     * @param status estado actualizado
+     * @param purchase compra actualizada
+     */
     @Override
     public void update(Status status, Purchase purchase) {
         Iterator iterator = list.values().iterator();
@@ -35,6 +45,9 @@ public class WarehouseStaff implements PurchaseObserver{
         }
     }
     
+    /**
+     * Imprime la lista de comrpas
+     */
     @Override
     public void printList() {
         String s = "";
@@ -48,6 +61,12 @@ public class WarehouseStaff implements PurchaseObserver{
         System.out.println("Lista de Bodega:\n" + s);
     }
 
+    /**
+     * Añade un producto a la lista
+     * 
+     * @param key consecutivo a agregar
+     * @param value producto
+     */
     @Override
     public void addProduct(Integer key, Purchase value) {
         list.put(key, value);

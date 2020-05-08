@@ -6,8 +6,12 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Figura circulo que contiene un atributo aunado con el atributo del padre,
+ * Figure. Puede clonarse ademas de que permite imprimir sus atributos de forma
+ * identada.
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Circle extends Figure implements Cloneable{
     
@@ -36,6 +40,11 @@ public class Circle extends Figure implements Cloneable{
         return "Circulo:\n" + super.toString() + ", Radio: " + radius + "\n";
     }
 
+    /**
+     * Agrega identacion a la impresion de el objeto
+     * 
+     * @return String del texto generado
+     */
     @Override
     public String ls() {
         return inden.getIndentation() + "Circulo:\n" 
@@ -43,6 +52,14 @@ public class Circle extends Figure implements Cloneable{
                 + ", Radio: " + radius + "\n";
     }
     
+    /**
+     * Clona un circulo con los mismos atributos pero con punteros diferentes
+     * (diferentes circulos) lo que permite modificar dicho clon sin modificar
+     * el original.
+     * 
+     * @return Figure que es la copia del objeto original.
+     * @throws CloneNotSupportedException cuando el clon no pudo ser creado
+     */
     @Override
     public Figure clone() throws CloneNotSupportedException{
         return new Circle(this.radius, super.getCoordenates());

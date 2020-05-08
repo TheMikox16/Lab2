@@ -6,8 +6,10 @@
 package excercise1.purchaseapp;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Objecto producto
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Product {
     

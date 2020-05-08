@@ -6,8 +6,11 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Interfaz con todos los metodos que han de implementar las fabricas
+ * de figuras
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public interface FactoryInterface {
     

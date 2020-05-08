@@ -6,8 +6,10 @@
 package excercise1.purchaseapp;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Clase que maneja la descripcion de un estado o el estado actual de un producto 
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public enum StatusEnum {
     

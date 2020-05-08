@@ -6,11 +6,24 @@
 package exercise2;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Clase que se enrcarga de llamar a los builder de cada atributo o figura
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class Scheduler {
     
+    /**
+     * Creacion de figuras por medio de las llamadas al builder de figuras ya 
+     * identificadas por el FigureFactory
+     * 
+     * @param inden identacion
+     * @param n opcion de figura a construir, identificado en el factory
+     * @param specs los datos de atributos
+     * @return figura que proviene del builder y se regresa al factory
+     * @throws PersonalizedException excepcion de alguna validacion que se ha
+     * incumplido en el builder
+     */
     public Figure createFigure(Indentation inden, int n, int... specs) throws PersonalizedException{
         FigureBuilder builder = new FigureBuilder();
         builder.buildFigure(inden, n);
@@ -27,6 +40,15 @@ public class Scheduler {
         return null;
     }
     
+    /**
+     * Sobrecarga. Creacion de figuras mixtas por medio de las llamadas al 
+     * builder de figuras ya identificadas por el FigureFactory
+     * 
+     * @param inden identacion
+     * @return figura que proviene del builder y se regresa al factory
+     * @throws PersonalizedException excepcion de alguna validacion que se ha
+     * incumplido en el builder
+     */
     public Figure createFigure(Indentation inden, Figure... figures) throws PersonalizedException{
         FigureBuilder builder = new FigureBuilder();
         builder.buildFigure(inden, 2);

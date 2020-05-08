@@ -8,8 +8,10 @@ package excercise1.purchaseapp;
 import java.util.Comparator;
 
 /**
- *
- * @author Miguel Angel Egoavil Mathison
+ * Interfaz comparador que implementan los estados para efectos de ordenamiento
+ * 
+ * @author Miguel Angel Egoavil Mathison  Carne: B92695
+ * @author Sean Stward Campos Siles       Carne: B91569
  */
 public class StatusComparator implements Comparator<Purchase>{
 
