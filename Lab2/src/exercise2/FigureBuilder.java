@@ -130,7 +130,7 @@ public class FigureBuilder implements AbstractBuilder{
             }else if((this.figure.getCoordenates() 
                     - ((Circle) this.figure).getRadius()) < 0){
                 throw new PersonalizedException("Diferencia entre radio y"
-                        + "coordenadas ha dado negativo");
+                        + " coordenadas ha dado negativo");
             }
         }
         if(this.figure instanceof Rectangle){
@@ -138,10 +138,14 @@ public class FigureBuilder implements AbstractBuilder{
                 throw new PersonalizedException("Altura del rectangulo no valido");
             }else if(((Rectangle) this.figure).getWidth() == 0){
                 throw new PersonalizedException("Ancho del rectangulo no valido");
-            }else if(((Rectangle) this.figure).getHigh() - ((Rectangle) this.figure).getWidth() > 0
-                    && ((Rectangle) this.figure).getHigh() - this.figure.getCoordenates() > 0
-                    && ((Rectangle) this.figure).getWidth() - this.figure.getCoordenates() > 0){
-                throw new PersonalizedException("");
+            }else if(((Rectangle) this.figure).getHigh() - ((Rectangle) this.figure).getWidth() < 0){
+                throw new PersonalizedException("Error en la diferencia del alto y ancho del rectangulo");
+            }else if(this.figure.getCoordenates() - ((Rectangle) this.figure).getHigh() < 0){
+                throw new PersonalizedException("Error en la diferencia entre el alto y coordenadas"
+                        + " del rectangulo");
+            }else if(this.figure.getCoordenates() -((Rectangle) this.figure).getWidth() < 0){
+                throw new PersonalizedException("Error en la diferencia entre el ancho y las coordenadas"
+                        + " del rectangulo");
             }
         }
         if(this.figure instanceof MixedFigure){

@@ -35,7 +35,7 @@ public class FigureFactory implements FactoryInterface{
         }else if(specs.length == 3){
             return schedule.createFigure(inden, 1, specs);
         }
-        return null;
+        throw new PersonalizedException("Cantidad de valores introducidos no validos");
     }
         
     /**
