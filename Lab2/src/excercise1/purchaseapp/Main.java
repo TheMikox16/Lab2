@@ -52,12 +52,12 @@ public class Main {
         p1.removeProduct("111");
         
         p1.setShipping(new ShipmentByPlane());
-        ShipmentByPlane shipmentPlane = new ShipmentByPlane();
+        ShipmentByPlane shipmentPlane1 = new ShipmentByPlane();
         IShipments ship = new BasicShipment();
         IShipments giftDecorator = new FragilWrap(ship);
         IShipments giftDecorator1 = new GiftCard(ship);
-        giftDecorator.shipmentPlaneDecorator(shipmentPlane);
-        giftDecorator1.shipmentPlaneDecorator(shipmentPlane);
+        giftDecorator.shipmentPlaneDecorator(shipmentPlane1);
+        giftDecorator1.shipmentPlaneDecorator(shipmentPlane1);
                 
         Purchase p2 = new Purchase();
         p2.addPurchaseObserver(new Buyer());
@@ -69,12 +69,12 @@ public class Main {
         p2.addProduct(new Product("654", 3, 1.2));
         
         p2.setShipping(new ShipmentByBoat());
-        ShipmentByBoat shipmentBoat = new ShipmentByBoat();
-        ship = new BasicShipment();
-        giftDecorator = new GiftWrap(ship);
-        giftDecorator1 = new GiftCard(ship);
-        giftDecorator.shipmentBoatDecorator(shipmentBoat);
-        giftDecorator1.shipmentBoatDecorator(shipmentBoat);
+        ShipmentByBoat shipmentBoat1 = new ShipmentByBoat();
+        IShipments ship1 = new BasicShipment();
+        IShipments giftDecorator2 = new GiftWrap(ship1);
+        IShipments giftDecorator3 = new GiftCard(ship1);
+        giftDecorator2.shipmentBoatDecorator(shipmentBoat1);
+        giftDecorator3.shipmentBoatDecorator(shipmentBoat1);
                 
         Purchase p3 = new Purchase();
         p3.addPurchaseObserver(new Buyer());
@@ -86,12 +86,12 @@ public class Main {
         p3.addProduct(new Product("866", 2, 8.7));
         
         p3.setShipping(new ShipmentByBoat());
-        shipmentBoat = new ShipmentByBoat();
-        ship = new BasicShipment();
-        giftDecorator = new GiftWrap(ship);
-        giftDecorator1 = new FragilWrap(ship);
-        giftDecorator.shipmentBoatDecorator(shipmentBoat);
-        giftDecorator1.shipmentBoatDecorator(shipmentBoat);
+        ShipmentByBoat shipmentBoat2 = new ShipmentByBoat();
+        IShipments ship3 = new BasicShipment();
+        IShipments giftDecorator4 = new GiftWrap(ship3);
+        IShipments giftDecorator5 = new FragilWrap(ship3);
+        giftDecorator4.shipmentBoatDecorator(shipmentBoat2);
+        giftDecorator5.shipmentBoatDecorator(shipmentBoat2);
         
         Purchase p4 = new Purchase();
         p4.addPurchaseObserver(new Buyer());
@@ -103,14 +103,14 @@ public class Main {
         p4.addProduct(new Product("123", 2, 2.6));
         
         p4.setShipping(new ShipmentByPlane());
-        shipmentPlane = new ShipmentByPlane();
-        ship = new BasicShipment();
-        giftDecorator = new FragilWrap(ship);
-        giftDecorator1 = new GiftCard(ship);
-        IShipments giftDecorator2 = new GiftWrap(ship);
-        giftDecorator.shipmentPlaneDecorator(shipmentPlane);
-        giftDecorator1.shipmentPlaneDecorator(shipmentPlane);
-        giftDecorator2.shipmentPlaneDecorator(shipmentPlane);
+        ShipmentByPlane shipmentPlane2 = new ShipmentByPlane();
+        IShipments ship4 = new BasicShipment();
+        IShipments giftDecorator6 = new FragilWrap(ship4);
+        IShipments giftDecorator7 = new GiftCard(ship4);
+        IShipments giftDecorator8 = new GiftWrap(ship4);
+        giftDecorator6.shipmentPlaneDecorator(shipmentPlane2);
+        giftDecorator7.shipmentPlaneDecorator(shipmentPlane2);
+        giftDecorator8.shipmentPlaneDecorator(shipmentPlane2);
         
         processing.addPurchase(p2);
         Thread.sleep(200);
@@ -160,19 +160,19 @@ public class Main {
         processing.printObservers();  
         
         System.out.print("Detalles envio compra 1:\n");
-        shipmentPlane.print(p1);
+        shipmentPlane1.print(p1);
         p1.shipping();
 
         System.out.print("\n\nDetalles envio compra 2:\n");
-        shipmentBoat.print(p2);
+        shipmentBoat1.print(p2);
         p2.shipping();
         
         System.out.print("\n\nDetalles envio compra 3:\n");
-        shipmentBoat.print(p3);
+        shipmentBoat2.print(p3);
         p3.shipping();
         
         System.out.print("\n\nDetalles envio compra 4:\n");
-        shipmentPlane.print(p4);
+        shipmentPlane2.print(p4);
         p4.shipping();
         
         }catch (InterruptedException ex){
