@@ -14,10 +14,6 @@ import excercise1.patterns.IShipments;
 import excercise1.patterns.ShipmentByBoat;
 import excercise1.patterns.ShipmentByPlane;
 import excercise1.patterns.WarehouseStaff;
-import excercise1.purchaseapp.DeliveredList;
-import excercise1.purchaseapp.ProcessingList;
-import excercise1.purchaseapp.Product;
-import excercise1.purchaseapp.Purchase;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
