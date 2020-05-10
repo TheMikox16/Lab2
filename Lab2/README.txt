@@ -11,3 +11,6 @@ Carne: B92695
 
 Sean Stward Campos Siles
 Carne: B91569
+
+git:
+https://github.com/TheMikox16/Lab2
