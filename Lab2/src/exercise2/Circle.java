@@ -22,7 +22,7 @@ public class Circle extends Figure implements Cloneable{
         this.inden = inden;
     }
     
-    public Circle(int radius, int coordenates) {
+    public Circle(int radius, Point coordenates) {
         super(coordenates);
         this.radius = radius;
     }

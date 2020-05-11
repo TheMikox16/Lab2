@@ -14,7 +14,7 @@ package exercise2;
  */
 public interface FactoryInterface {
     
-    public abstract Figure createFigure(Indentation inden, int... specs) throws PersonalizedException;
+    public abstract Figure createFigure(Indentation inden, Point coordenates, int... specs) throws PersonalizedException;
     
     public abstract Figure createFigure(Indentation inden, Figure... figures) throws PersonalizedException;
     

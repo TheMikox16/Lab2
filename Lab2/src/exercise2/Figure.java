@@ -15,32 +15,32 @@ package exercise2;
  */
 public abstract class Figure implements AbstractComp, Cloneable{
     
-    private int coordenates;
+    private Point coordenates;
 
     public Figure() {
     }
 
-    public Figure(int coordenates) {
+    public Figure(Point coordenates) {
         this.coordenates = coordenates;
     }
 
-    public int getCoordenates() {
+    public Point getCoordenates() {
         return coordenates;
     }
 
-    public void setCoordenates(int coordenates) {
+    public void setCoordenates(Point coordenates) {
         this.coordenates = coordenates;
     }
 
 
     @Override
     public String toString() {
-        return "Coordenadas: " + coordenates;
+        return "Coordenadas: " + coordenates.toString();
     }
     
     @Override
     public String ls(){
-        return "Coordenadas: " + coordenates;
+        return "Coordenadas: " + coordenates.toString();
     }
     
     /**

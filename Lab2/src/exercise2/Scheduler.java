@@ -24,17 +24,17 @@ public class Scheduler {
      * @throws PersonalizedException excepcion de alguna validacion que se ha
      * incumplido en el builder
      */
-    public Figure createFigure(Indentation inden, int n, int... specs) throws PersonalizedException{
+    public Figure createFigure(Indentation inden, Point point, int n, int... specs) throws PersonalizedException{
         FigureBuilder builder = new FigureBuilder();
         builder.buildFigure(inden, n);
-        if(specs.length == 2){
-            builder.buildCoordenates(specs[0]);
-            builder.buildSide(specs[1]);
+        if(specs.length == 1){
+            builder.buildCoordenates(point);
+            builder.buildSide(specs[0]);
             return builder.getFigure();
-        }else if(specs.length == 3){
-            builder.buildCoordenates(specs[0]);
-            builder.buildSide(specs[1]);
-            builder.buildSide2(specs[2]);
+        }else if(specs.length == 2){
+            builder.buildCoordenates(point);
+            builder.buildSide(specs[0]);
+            builder.buildSide2(specs[1]);
             return builder.getFigure();
         }
         return null;

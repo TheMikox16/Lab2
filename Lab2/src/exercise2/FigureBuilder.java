@@ -47,9 +47,9 @@ public class FigureBuilder implements AbstractBuilder{
      * @param n dato de coordenada
      */
     @Override
-    public void buildCoordenates(int n) {
-        if(n > 0){
-            this.figure.setCoordenates(n);
+    public void buildCoordenates(Point point) {
+        if(point != null){
+            this.figure.setCoordenates(point);
         }
     }
 
@@ -121,13 +121,13 @@ public class FigureBuilder implements AbstractBuilder{
     @Override
     public Figure getFigure() throws PersonalizedException {
         if(!(this.figure instanceof MixedFigure) 
-                && this.figure.getCoordenates() == 0){
+                && this.figure.getCoordenates() == null){
             throw new PersonalizedException("Coordenadas no validas");
         }
         if(this.figure instanceof Circle){
             if(((Circle) this.figure).getRadius() == 0){
                 throw new PersonalizedException("Radio del circulo no valido");
-            }else if((this.figure.getCoordenates() 
+            }else if((this.figure.getCoordenates().getX() + this.figure.getCoordenates().getX()
                     - ((Circle) this.figure).getRadius()) < 0){
                 throw new PersonalizedException("Diferencia entre radio y"
                         + " coordenadas ha dado negativo");
@@ -138,12 +138,15 @@ public class FigureBuilder implements AbstractBuilder{
                 throw new PersonalizedException("Altura del rectangulo no valido");
             }else if(((Rectangle) this.figure).getWidth() == 0){
                 throw new PersonalizedException("Ancho del rectangulo no valido");
-            }else if(((Rectangle) this.figure).getHigh() - ((Rectangle) this.figure).getWidth() < 0){
+            }else if(((Rectangle) this.figure).getHigh() 
+                    - ((Rectangle) this.figure).getWidth() < 0){
                 throw new PersonalizedException("Error en la diferencia del alto y ancho del rectangulo");
-            }else if(this.figure.getCoordenates() - ((Rectangle) this.figure).getHigh() < 0){
+            }else if(this.figure.getCoordenates().getY() 
+                    - ((Rectangle) this.figure).getHigh() < 0){
                 throw new PersonalizedException("Error en la diferencia entre el alto y coordenadas"
                         + " del rectangulo");
-            }else if(this.figure.getCoordenates() -((Rectangle) this.figure).getWidth() < 0){
+            }else if(this.figure.getCoordenates().getX()
+                    -((Rectangle) this.figure).getWidth() < 0){
                 throw new PersonalizedException("Error en la diferencia entre el ancho y las coordenadas"
                         + " del rectangulo");
             }

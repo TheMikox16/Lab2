@@ -15,7 +15,7 @@ public interface AbstractBuilder {
     
     public abstract void buildFigure(Indentation inden, int n);
     
-    public abstract void buildCoordenates(int n);
+    public abstract void buildCoordenates(Point point);
     
     public abstract void buildSide(int n);
     

@@ -23,7 +23,7 @@ public class Rectangle extends Figure implements Cloneable{
         this.inden = inden;
     }
     
-    public Rectangle(int high, int weigth, int coordenates) {
+    public Rectangle(int high, int weigth, Point coordenates) {
         super(coordenates);
         this.high = high;
         this.width = weigth;

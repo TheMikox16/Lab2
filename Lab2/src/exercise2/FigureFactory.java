@@ -28,12 +28,12 @@ public class FigureFactory implements FactoryInterface{
      * figuras
      */
     @Override
-    public Figure createFigure(Indentation inden, int... specs) throws PersonalizedException{
+    public Figure createFigure(Indentation inden, Point coordenates, int... specs) throws PersonalizedException{
         Scheduler schedule = new Scheduler();
-        if(specs.length == 2){
-            return schedule.createFigure(inden, 0, specs);
-        }else if(specs.length == 3){
-            return schedule.createFigure(inden, 1, specs);
+        if(specs.length == 1){
+            return schedule.createFigure(inden, coordenates, 0, specs);
+        }else if(specs.length == 2){
+            return schedule.createFigure(inden, coordenates, 1, specs);
         }
         throw new PersonalizedException("Cantidad de valores introducidos no validos");
     }
